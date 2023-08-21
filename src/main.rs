@@ -1,3 +1,4 @@
+#![windows_subsystem = "windows"]
 use fltk::{
     enums::{Align, Color, FrameType},
     prelude::*,
@@ -17,6 +18,7 @@ const STG_URL: &str = "https://customer-survey-api-stg.lingyue-digital.com";
 const PROD_URL: &str = "https://customer-survey-api.lingyue-digital.com";
 
 const SYSTEM_PATH: &str = "/customer/api/v1/survey/protected/v1/get-question-detail";
+
 
 fn main() {
     let app = app::App::default();
@@ -39,7 +41,6 @@ fn main() {
         .with_size(60, 20)
         .right_of(&survey_id, 20)
         .with_label("businessId:");
-
     let business_id = input::Input::default()
         .with_size(150, 20)
         .right_of(&business_id_label, 10);
